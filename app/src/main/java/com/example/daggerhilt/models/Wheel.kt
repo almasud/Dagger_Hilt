@@ -6,7 +6,7 @@ import javax.inject.Inject
 class Wheel @Inject constructor() {
 
     fun getWheel() {
-        Log.i(Companion.TAG, "getWheel: wheel is ready.")
+        Log.i(TAG, "getWheel: wheel is ready.")
     }
 
     companion object {
