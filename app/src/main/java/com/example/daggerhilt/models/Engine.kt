@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class Engine @Inject constructor() {
 
-    fun getEngineStatus() {
+    fun showEngineStatus() {
         Log.i(TAG, ": Engine is started.")
     }
 

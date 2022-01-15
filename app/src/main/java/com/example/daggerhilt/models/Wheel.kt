@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class Wheel @Inject constructor() {
 
-    fun getWheel() {
+    fun showWheelStatus() {
         Log.i(TAG, "getWheel: wheel is ready.")
     }
 
