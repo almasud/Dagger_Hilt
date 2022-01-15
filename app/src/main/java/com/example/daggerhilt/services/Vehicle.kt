@@ -1,12 +1,11 @@
 package com.example.daggerhilt.services
 
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
+import javax.inject.Singleton
 
 interface Media {
     fun getName() : String
@@ -14,10 +13,10 @@ interface Media {
 
 // Constructor-injected, because Hilt needs to know how to
 // provide instances of Vehicle, too.
-class Vehicle @Inject constructor() : Media {
+class Vehicle @Inject constructor(private val name: String) : Media {
 
     override fun getName(): String {
-        return "Vehicle"
+        return name
     }
 }
 
@@ -26,5 +25,11 @@ class Vehicle @Inject constructor() : Media {
 object MediaModule {
 
     @Provides
-    fun provideMedia() : Media = Vehicle()
+    @Singleton
+    fun getName() : String = "Vehicle"
+
+    @Provides
+    fun provideMedia(
+        name: String
+    ) : Media = Vehicle(name)
 }
