@@ -2,8 +2,10 @@ package com.example.daggerhilt.services
 
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
 
 interface Media {
@@ -20,11 +22,9 @@ class Vehicle @Inject constructor() : Media {
 }
 
 @Module
-@InstallIn(ActivityComponent::class)
-abstract class MediaModule {
+@InstallIn(SingletonComponent::class)
+object MediaModule {
 
-    @Binds
-    abstract fun bindMedia(
-        vehicle: Vehicle
-    ) : Media
+    @Provides
+    fun provideMedia() : Media = Vehicle()
 }
