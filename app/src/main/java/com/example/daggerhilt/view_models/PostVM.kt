@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.catch
 import javax.inject.Inject
 
 @HiltViewModel
-class PostVM @Inject constructor(private val postRepository: PostRepository)
+class PostVM @Inject constructor(postRepository: PostRepository)
     : ViewModel() {
 
         val postResponse : LiveData<List<Post>> = postRepository.getPost()
