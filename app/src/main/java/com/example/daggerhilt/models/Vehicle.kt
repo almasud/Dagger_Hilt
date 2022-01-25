@@ -1,4 +1,4 @@
-package com.example.daggerhilt.services
+package com.example.daggerhilt.models
 
 import dagger.Module
 import dagger.Provides

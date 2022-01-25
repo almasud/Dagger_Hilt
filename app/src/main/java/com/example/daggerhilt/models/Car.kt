@@ -1,7 +1,6 @@
 package com.example.daggerhilt.models
 
 import android.util.Log
-import com.example.daggerhilt.services.Vehicle
 import javax.inject.Inject
 
 // Constructor injection - When Inject to constructor then
